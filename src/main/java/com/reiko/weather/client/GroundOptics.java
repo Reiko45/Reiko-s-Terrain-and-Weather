@@ -88,8 +88,8 @@ public final class GroundOptics {
                 float radius = 0.6F + t * 0.08F;
                 for (int sgm = 0; sgm < 24; sgm++) {
                     float p0 = sgm / 24.0F * Mth.TWO_PI, p1 = (sgm + 1) / 24.0F * Mth.TWO_PI;
-                    vertex(buffer, pose, c, white, 0.32F * wet);
-                    vertex(buffer, pose, c, white, 0.32F * wet);
+                    vertex(buffer, pose, c, white, 0.16F * wet);
+                    vertex(buffer, pose, c, white, 0.16F * wet);
                     vertex(buffer, pose, ring(c, u, v, p1, radius), white, 0.0F);
                     vertex(buffer, pose, ring(c, u, v, p0, radius), white, 0.0F);
                 }
@@ -101,7 +101,8 @@ public final class GroundOptics {
         Vector3f bu = new Vector3f(ref).sub(new Vector3f(anti).mul(anti.dot(ref))).normalize();
         Vector3f bv = new Vector3f(anti).cross(bu).normalize();
         float[][] bands = {{0.75F, 0.8F, 1.0F}, {0.95F, 1.0F, 0.95F}, {1.0F, 0.88F, 0.8F}};
-        int segments = 120;
+        int segments = 360;
+        float twinkle = (level.getGameTime() + partialTick) * 0.05F;
         for (int sgm = 0; sgm < segments; sgm++) {
             float p0 = sgm / (float) segments * Mth.TWO_PI, p1 = (sgm + 1) / (float) segments * Mth.TWO_PI;
             for (int b = 0; b < bands.length; b++) {
@@ -109,9 +110,20 @@ public final class GroundOptics {
                 Vector3f a0 = onGround(level, cam, eye, bowRay(anti, bu, bv, p0, r0)), a1 = onGround(level, cam, eye, bowRay(anti, bu, bv, p1, r0));
                 Vector3f b1 = onGround(level, cam, eye, bowRay(anti, bu, bv, p1, r1)), b0 = onGround(level, cam, eye, bowRay(anti, bu, bv, p0, r1));
                 if (a0 == null || a1 == null || b0 == null || b1 == null) continue;
-                // fainter far off, where the drops are seen edge-on through the grass
-                float alpha = 0.2F * wet * Mth.clamp(1.0F - a0.length() / 36.0F, 0.0F, 1.0F);
-                if (alpha < 0.01F) continue;
+                // never stretch a piece up the side of a step in the ground: the bow only lies on the grass tops
+                float lo = Math.min(Math.min(a0.y, a1.y), Math.min(b0.y, b1.y)), hi = Math.max(Math.max(a0.y, a1.y), Math.max(b0.y, b1.y));
+                if (hi - lo > 0.25F) continue;
+                float dist = a0.length();
+                // fainter far off, where the drops are seen edge-on through the grass, and right at your feet
+                float alpha = 0.11F * wet * Mth.clamp(1.0F - dist / 36.0F, 0.0F, 1.0F) * Mth.clamp((dist - 1.5F) / 3.0F, 0.0F, 1.0F);
+                // it's made of separate drops, so it glitters rather than glowing as a solid band: each patch of
+                // grass catches the light or doesn't, and twinkles as you move
+                int gx = Mth.floor(cam.x + a0.x * 2.0F), gz = Mth.floor(cam.z + a0.z * 2.0F);
+                int h = (gx * 73856093) ^ (gz * 19349663) ^ (b * 83492791);
+                float glint = ((h >>> 8) & 255) / 255.0F;
+                glint = Mth.clamp(glint * 1.6F - 0.55F + 0.35F * Mth.sin(twinkle + (h & 1023) * 0.37F), 0.0F, 1.0F);
+                alpha *= glint;
+                if (alpha < 0.008F) continue;
                 vertex(buffer, pose, a0, bands[b], alpha);
                 vertex(buffer, pose, a1, bands[b], alpha);
                 vertex(buffer, pose, b1, bands[b], alpha);

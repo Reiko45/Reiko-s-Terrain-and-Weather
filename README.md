@@ -486,8 +486,9 @@ Ways to stay comfortable:
 - **Planets:** Venus (the evening or morning star), Jupiter, Mars and Saturn wander along the sun's path, and Mars
   and the moon meet now and then. **Earthshine** lights the dark part of a crescent moon, and a low moon rises
   orange: deepest of all the **harvest moon**, the full moon in autumn.
-- **Dewbows and the heiligenschein:** on dewy mornings a glow rings the shadow of your head on the grass, and a pale
-  bow lies on the grass in front of you. On bright days with a rough sea, rainbows stand in the spray off the waves.
+- **Dewbows and the heiligenschein:** on calm, clear, cool mornings a faint glow rings the shadow of your head on the
+  grass, and a pale, glittering bow lies on the dew in front of you (with no rainbow in the sky: it's the dew drops
+  that make it; turn off "Dewbows and Heiligenschein" in the visual settings if you'd rather not see it). On bright days with a rough sea, rainbows stand in the spray off the waves.
 - **Banner clouds** stream off sharp peaks on windy days; a **blue haze** hangs over big forests on hot summer days;
   and on still, cold mornings and evenings, smoke from fires and furnaces spreads out in a flat **woodsmoke** layer.
 - **Wall clouds and funnel clouds:** a dark, turning wall cloud hangs under the back of a supercell, and now

@@ -29,7 +29,7 @@ repositories {
 }
 
 base {
-    archivesName = mod_id
+    archivesName = 'reikos_terrain_and_weather'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)

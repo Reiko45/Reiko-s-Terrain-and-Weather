@@ -378,7 +378,7 @@ public final class WeatherConfig {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
 
         b.comment("General weather cycle settings").push("general");
-        ENABLED = b.comment("Enable the Reiko's Weather cycle. When disabled, vanilla weather runs untouched.")
+        ENABLED = b.comment("Enable the mod's weather cycle. When disabled, vanilla weather runs untouched.")
                 .define("enabled", true);
         DURATION_MULTIPLIER = b.comment("Multiplier applied to how long each weather lasts.")
                 .defineInRange("durationMultiplier", 1.0, 0.05, 20.0);

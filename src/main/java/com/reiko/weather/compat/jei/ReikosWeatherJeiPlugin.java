@@ -13,7 +13,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.List;
 
-/** JEI information pages for every Reiko's Weather item. Only loaded when JEI is installed. */
+/** JEI information pages for every Reiko's Terrain and Weather item. Only loaded when JEI is installed. */
 @JeiPlugin
 public class ReikosWeatherJeiPlugin implements IModPlugin {
     private static final ResourceLocation UID = ReikosWeather.id("jei_plugin");

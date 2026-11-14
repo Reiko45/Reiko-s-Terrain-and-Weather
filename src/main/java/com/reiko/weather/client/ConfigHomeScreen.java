@@ -12,7 +12,7 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 /**
- * The mod's settings page (Mods > Reiko's Weather > Config): one-click presets for the visual
+ * The mod's settings page (Mods > Reiko's Terrain and Weather > Config): one-click presets for the visual
  * settings, plus the full client and server settings.
  */
 public class ConfigHomeScreen extends Screen {

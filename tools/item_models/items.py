@@ -1,4 +1,4 @@
-"""3D item models for Reiko's Weather.
+"""3D item models for Reiko's Terrain and Weather.
 
     python3 tools/item_models/items.py                 # regenerate every model
     python3 tools/item_models/items.py barometer tent  # just these

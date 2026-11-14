@@ -27,7 +27,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 /**
- * Reiko's Weather: a complete weather overhaul for the overworld.
+ * Reiko's Terrain and Weather: a complete terrain and weather overhaul.
  *
  * <p>The server owns a {@link com.reiko.weather.weather.WeatherState} that cycles through every
  * {@link com.reiko.weather.weather.WeatherType}. Each weather type manifests differently depending on the

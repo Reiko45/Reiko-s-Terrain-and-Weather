@@ -1,6 +1,6 @@
-# Reiko's Weather
+# Reiko's Terrain and Weather
 
-A complete weather overhaul for **Minecraft 1.21.1** on **NeoForge**. It replaces vanilla's
+A complete terrain and weather overhaul for **Minecraft 1.21.1** on **NeoForge**. It replaces vanilla's
 rain/thunder cycle with 36 weather types, seasons, storms and weather fronts that roll across the map, tornadoes,
 waterspouts and dust devils. It also adds body temperature and ways to stay comfortable, local
 climates shaped by the terrain, droughts and wildfires, winter hazards, storm surges and tides,
@@ -10,9 +10,12 @@ weather in the Nether and the End, a weather radar and radio, ways to control th
 meteorologist villager, weather gear, weather-aware and redstone blocks, a full set of sky, ground
 and sound effects, an in-game guidebook, and datapack-defined weather.
 
+*Formerly **Reiko's Weather**. Only the name changed: the mod ID is still `reikos_weather` (as are the config files,
+the `/rweather` command and every block and item ID), so existing worlds, settings and datapacks carry on as before.*
+
 New players get a **Weather Almanac**, the in-game guide to everything below (with recipes).
 
-Everything the mod adds sits in its own **Reiko's Weather** creative tab (on the second page of the
+Everything the mod adds sits in its own **Reiko's Terrain and Weather** creative tab (on the second page of the
 creative inventory). Every item has a 3D model, in the inventory, in your hand, on the ground and in item frames.
 
 ## Weather types
@@ -827,7 +830,7 @@ probes, goggles, winter coats, handheld radars and, at master level, lightning b
 radars.
 
 ## Advancements
-A "Reiko's Weather" advancement tab with 105 entries, including Storm Chaser, We're Not in Kansas
+A "Reiko's Terrain and Weather" advancement tab with 105 entries, including Storm Chaser, We're Not in Kansas
 Anymore, Practically Perfect (an umbrella glide), Northern Lights, Whiteout, Four Seasons, Bottled
 Lightning, Eye of the Storm, Make a Wish, Once in a Blood Moon, Skating on Thin Ice, Riding the
 Thermals, Fishing in Troubled Waters, Supercharged, Straight-Line Winds, Hot Spot (stand on a
